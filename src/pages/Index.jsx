@@ -6,7 +6,7 @@ const Navbar = () => {
   const { colorMode, toggleColorMode } = useColorMode();
 
   return (
-    <Flex as="nav" align="center" justify="space-between" padding={4} color="white" shadow="md">
+    <Flex as="nav" align="center" justify="space-between" padding={0} color="white" shadow="md">
       <Box>
         <FaBars marginRight="4" />
       </Box>
