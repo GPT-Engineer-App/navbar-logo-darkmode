@@ -1,7 +1,8 @@
-import React from "react";
-import { Box, Drawer, DrawerBody, DrawerHeader, DrawerOverlay, DrawerContent, DrawerCloseButton, VStack, Button } from "@chakra-ui/react";
+import React, { useRef } from "react";
+import { Box, Drawer, DrawerBody, DrawerHeader, DrawerOverlay, DrawerContent, DrawerCloseButton, VStack, Button, useColorModeValue } from "@chakra-ui/react";
 
-function Sidebar({ isOpen, onClose }) {
+function Sidebar({ isOpen, onClose, sections, activeSection }) {
+  const btnRefs = useRef({});
   return (
     <Drawer isOpen={isOpen} placement="left" onClose={onClose}>
       <DrawerOverlay />
@@ -10,21 +11,21 @@ function Sidebar({ isOpen, onClose }) {
         <DrawerHeader borderBottomWidth="1px">Navigation</DrawerHeader>
         <DrawerBody>
           <VStack p={5} display="flex" flexDirection="column" alignItems="flex-start">
-            <Button w="full" variant="ghost" onClick={onClose}>
-              Section 1
-            </Button>
-            <Button w="full" variant="ghost" onClick={onClose}>
-              Section 2
-            </Button>
-            <Button w="full" variant="ghost" onClick={onClose}>
-              Section 3
-            </Button>
-            <Button w="full" variant="ghost" onClick={onClose}>
-              Section 4
-            </Button>
-            <Button w="full" variant="ghost" onClick={onClose}>
-              Section 5
-            </Button>
+            {sections.map((section) => (
+              <Button
+                key={section.id}
+                w="full"
+                variant="ghost"
+                ref={(el) => (btnRefs.current[section.id] = el)}
+                onClick={() => {
+                  onClose();
+                  document.getElementById(section.id).scrollIntoView({ behavior: "smooth" });
+                }}
+                backgroundColor={activeSection === section.id ? useColorModeValue("gray.200", "gray.700") : undefined}
+              >
+                {section.title}
+              </Button>
+            ))}
           </VStack>
         </DrawerBody>
       </DrawerContent>

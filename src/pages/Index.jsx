@@ -1,6 +1,6 @@
 // Remove duplicate Navbar and Index components and add missing imports for Navbar
 
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Box, Flex, IconButton, useColorMode, useDisclosure } from "@chakra-ui/react";
 import Sidebar from "../components/Sidebar";
 import { FaBars, FaMoon, FaSun, FaUser } from "react-icons/fa";
@@ -21,16 +21,42 @@ const Navbar = () => {
   );
 };
 
+const sections = [
+  { id: "section1", title: "Section 1" },
+  { id: "section2", title: "Section 2" },
+  { id: "section3", title: "Section 3" },
+  { id: "section4", title: "Section 4" },
+  { id: "section5", title: "Section 5" },
+];
+
 const Index = () => {
+  const [activeSection, setActiveSection] = useState();
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveSection(entry.target.id);
+          }
+        });
+      },
+      { rootMargin: "-50% 0px -50% 0px" },
+    );
+
+    sections.forEach((section) => {
+      observer.observe(document.getElementById(section.id));
+    });
+
+    return () => sections.forEach((section) => observer.unobserve(document.getElementById(section.id)));
+  }, []);
   return (
     <Box>
       <Navbar />
       <Box pt="100px" p={5}>
-        <Section title="Section 1" description="Description for Section 1" />
-        <Section title="Section 2" description="Description for Section 2" />
-        <Section title="Section 3" description="Description for Section 3" />
-        <Section title="Section 4" description="Description for Section 4" />
-        <Section title="Section 5" description="Description for Section 5. This is an additional line to extend the description." showDivider={false} />
+        {sections.map((section) => (
+          <Section key={section.id} id={section.id} title={section.title} description={`Description for ${section.title}`} showDivider={section.title !== "Section 5"} />
+        ))}
       </Box>
     </Box>
   );
