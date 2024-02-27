@@ -10,9 +10,9 @@ const Navbar = () => {
       <Box>
         <FaBars marginRight="4" />
       </Box>
-      {/* Dark Mode Switch */}
-      {colorMode === "dark" ? <FaSun marginRight="2" /> : <FaMoon marginRight="2" color={useColorModeValue("black", "white")} />}
       <Switch id="dark-mode-switch" colorScheme="purple" isChecked={colorMode === "dark"} onChange={toggleColorMode} />
+      {/* Dark Mode Switch */}
+      {colorMode === "dark" ? <FaSun marginLeft="2" /> : <FaMoon marginLeft="2" color={useColorModeValue("black", "white")} />}
     </Flex>
   );
 };
