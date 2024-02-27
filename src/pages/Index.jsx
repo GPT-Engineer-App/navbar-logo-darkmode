@@ -6,7 +6,15 @@ const Navbar = () => {
   const { colorMode, toggleColorMode } = useColorMode();
   return (
     <Flex as="nav" align="center" justify="space-between" padding="4" color="white" shadow="md">
-      <IconButton aria-label="Toggle dark mode" icon={colorMode === "light" ? <FaMoon /> : <FaSun />} onClick={toggleColorMode} />
+      <Flex align="center">
+        {/* Placeholder for profile content */}
+        <Box as="span" marginEnd="4">
+          Profile
+        </Box>
+      </Flex>
+      <Flex align="center" justify="flex-end">
+        <IconButton aria-label="Toggle dark mode" icon={colorMode === "light" ? <FaMoon /> : <FaSun />} onClick={toggleColorMode} />
+      </Flex>
     </Flex>
   );
 };
