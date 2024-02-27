@@ -22,7 +22,7 @@ const Index = () => {
   return (
     <Box>
       <Navbar />
-      <Box pt="24" p={5}>
+      <Box pt="24" p={5} mt="64px">
         <Section title="Section 1" description="Description for Section 1" />
         <Section title="Section 2" description="Description for Section 2" />
         <Section title="Section 3" description="Description for Section 3" />
