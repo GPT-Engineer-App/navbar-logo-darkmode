@@ -22,7 +22,7 @@ const Index = () => {
   return (
     <Box>
       <Navbar />
-      <Box p={5}>
+      <Box pt="5rem" p={5}>
         <Heading as="h1" size="xl" mb={4}>
           Welcome to Our Website
         </Heading>
