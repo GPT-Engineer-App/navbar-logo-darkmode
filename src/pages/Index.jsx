@@ -10,7 +10,9 @@ const Navbar = () => {
       {/* Right section */}
       <Flex align="center">
         {/* Dark Mode Switch */}
-        <Switch id="dark-mode-switch" colorScheme="purple" isChecked={colorMode === "dark"} onChange={toggleColorMode} icon={colorMode === "dark" ? <FaMoon /> : <FaSun />} />
+        <Switch id="dark-mode-switch" colorScheme="purple" isChecked={colorMode === "dark"} onChange={toggleColorMode}>
+          {colorMode === "dark" ? <FaSun /> : <FaMoon />}
+        </Switch>
       </Flex>
     </Flex>
   );
