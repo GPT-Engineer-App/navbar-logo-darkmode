@@ -12,8 +12,14 @@ const Navbar = () => {
       </Box>
       {/* Dark Mode Switch is moved next to the mode icon */}
       {/* Dark Mode Switch */}
-      {colorMode === "dark" ? <FaSun /> : <FaMoon color={useColorModeValue("black", "white")} />}
-      <Switch id="dark-mode-switch" colorScheme="purple" isChecked={colorMode === "dark"} onChange={toggleColorMode} />
+      {colorMode === "dark" ? (
+        <>
+          <FaSun />
+          <Switch id="dark-mode-switch" colorScheme="purple" isChecked={colorMode === "dark"} onChange={toggleColorMode} />
+        </>
+      ) : (
+        <FaMoon color={useColorModeValue("black", "white")} />
+      )}
     </Flex>
   );
 };
