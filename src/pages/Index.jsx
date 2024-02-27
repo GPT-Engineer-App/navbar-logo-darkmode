@@ -27,7 +27,7 @@ const Index = () => {
         <Section title="Section 2" description="Description for Section 2" />
         <Section title="Section 3" description="Description for Section 3" />
         <Section title="Section 4" description="Description for Section 4" />
-        <Section title="Section 5" description="Description for Section 5. This is an additional line to extend the description." />
+        <Section title="Section 5" description="Description for Section 5. This is an additional line to extend the description." showDivider={false} />
       </Box>
     </Box>
   );
