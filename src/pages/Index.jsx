@@ -1,8 +1,8 @@
-import React from "react";
 import { Box } from "@chakra-ui/react";
+import Navbar from "../components/Navbar";
 
 const Index = () => {
-  return <Box position="relative" maxW="1200px" mx="auto"></Box>;
+  return <Navbar />;
 };
 
 export default Index;
