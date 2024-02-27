@@ -8,7 +8,7 @@ const Section = ({ title, description }) => {
         {title}
       </Heading>
       <Text fontSize="md">{description}</Text>
-      <Divider my={4} />
+      <Divider mt={6} mb={4} />
     </Box>
   );
 };
