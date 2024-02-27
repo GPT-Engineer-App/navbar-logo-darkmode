@@ -8,7 +8,7 @@ import Section from "./Section";
 const Navbar = () => {
   const { colorMode, toggleColorMode } = useColorMode();
   return (
-    <Flex as="nav" align="center" justify="space-between" padding="4" color="white" shadow="md" position="fixed" width="full" top="0" zIndex="sticky" overflow="auto" maxHeight="100vh">
+    <Flex as="nav" align="center" justify="space-between" padding="4" color="white" shadow="md" width="full" zIndex={10}>
       <IconButton aria-label="Menu" variant="ghost" icon={<FaBars />} mr="auto" />
       <Flex ml="auto" color={colorMode === "light" ? "black" : "white"}>
         <IconButton aria-label="Profile" variant="ghost" icon={<FaUser />} mr="2" />
@@ -22,7 +22,7 @@ const Index = () => {
   return (
     <Box>
       <Navbar />
-      <Box pt="24" p={5} mt="64px">
+      <Box pt="100px" p={5}>
         <Section title="Section 1" description="Description for Section 1" />
         <Section title="Section 2" description="Description for Section 2" />
         <Section title="Section 3" description="Description for Section 3" />
