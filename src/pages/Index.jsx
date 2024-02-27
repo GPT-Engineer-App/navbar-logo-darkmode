@@ -1,6 +1,9 @@
+// Remove duplicate Navbar and Index components and add missing imports for Navbar
+
 import React from "react";
 import { Box, Flex, IconButton, useColorMode, Heading, Text } from "@chakra-ui/react";
 import { FaBars, FaMoon, FaSun, FaUser } from "react-icons/fa";
+import Section from "./Section";
 
 const Navbar = () => {
   const { colorMode, toggleColorMode } = useColorMode();
@@ -25,9 +28,16 @@ const Index = () => {
         </Heading>
         <Text fontSize="lg">Discover the most amazing content here on our platform. Stay tuned for more updates.</Text>
       </Box>
+      <Section title="Section 1" description="Lorem ipsum dolor sit amet, consectetur adipiscing elit." />
+      <Section title="Section 2" description="Lorem ipsum dolor sit amet, consectetur adipiscing elit." />
+      <Section title="Section 3" description="Lorem ipsum dolor sit amet, consectetur adipiscing elit." />
+      <Section title="Section 4" description="Lorem ipsum dolor sit amet, consectetur adipiscing elit." />
+      <Section title="Section 5" description="Lorem ipsum dolor sit amet, consectetur adipiscing elit." />
       {/* Rest of the page content would continue here */}
     </Box>
   );
 };
 
 export default Index;
+
+// Removed duplicate Navbar and Index components
