@@ -3,7 +3,7 @@ import { Box, Heading, Text } from "@chakra-ui/react";
 
 const Section = ({ title, description }) => {
   return (
-    <Box p={5} border="1px" borderColor="gray.200" my={4} borderRadius="md" bg="gray.50" shadow="sm">
+    <Box p={5} my={4}>
       <Heading as="h2" size="lg" mb={3}>
         {title}
       </Heading>
