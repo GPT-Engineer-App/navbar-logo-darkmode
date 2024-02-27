@@ -9,7 +9,6 @@ const Navbar = () => {
     <Flex as="nav" align="center" justify="space-between" padding={4} color="white" shadow="md">
       <Box>
         <FaBars marginRight="4" />
-        <FaSearch marginRight="4" />
       </Box>
       {/* Dark Mode Switch */}
       {colorMode === "dark" ? <FaSun marginRight="2" /> : <FaMoon marginRight="2" color={useColorModeValue("black", "white")} />}
