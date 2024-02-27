@@ -22,7 +22,9 @@ const Index = () => {
   return (
     <Box>
       <Navbar />
-      <Box pt="6rem" p={5}>
+      <Box pt="16" p={5}>
+        {" "}
+        {/* Increased padding-top to avoid overlapping with the fixed Navbar */}
         <Heading as="h1" size="xl" mb={4}>
           Welcome to Our Website
         </Heading>
