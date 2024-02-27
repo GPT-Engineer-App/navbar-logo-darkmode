@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Flex, IconButton, useColorMode } from "@chakra-ui/react";
+import { Box, Flex, IconButton, useColorMode, Heading, Text } from "@chakra-ui/react";
 import { FaBars, FaMoon, FaSun, FaUser } from "react-icons/fa";
 
 const Navbar = () => {
@@ -19,7 +19,13 @@ const Index = () => {
   return (
     <Box>
       <Navbar />
-      {/* Rest of the page content would go here */}
+      <Box p={5}>
+        <Heading as="h1" size="xl" mb={4}>
+          Welcome to Our Website
+        </Heading>
+        <Text fontSize="lg">Discover the most amazing content here on our platform. Stay tuned for more updates.</Text>
+      </Box>
+      {/* Rest of the page content would continue here */}
     </Box>
   );
 };
