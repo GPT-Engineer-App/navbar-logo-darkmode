@@ -5,8 +5,8 @@ import { FaMoon, FaSun, FaUser } from "react-icons/fa";
 const Navbar = () => {
   const { colorMode, toggleColorMode } = useColorMode();
   return (
-    <Flex as="nav" align="center" justify="start" padding="4" color="white" shadow="md">
-      <Box as="span" marginEnd="4" display="flex" alignItems="center">
+    <Flex as="nav" align="center" justify="space-between" padding="4" color="white" shadow="md">
+      <Box as="span" display="flex" alignItems="center">
         <FaUser />
       </Box>
       <IconButton aria-label="Toggle dark mode" icon={colorMode === "light" ? <FaMoon /> : <FaSun />} onClick={toggleColorMode} />
