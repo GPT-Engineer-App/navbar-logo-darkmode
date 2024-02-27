@@ -23,11 +23,7 @@ const Index = () => {
     <Box>
       <Navbar />
       <Box pt="24" p={5}></Box>
-      <Section title="Section 1" description="Lorem ipsum dolor sit amet, consectetur adipiscing elit." />
-      <Section title="Section 2" description="Lorem ipsum dolor sit amet, consectetur adipiscing elit." />
-      <Section title="Section 3" description="Lorem ipsum dolor sit amet, consectetur adipiscing elit." />
-      <Section title="Section 4" description="Lorem ipsum dolor sit amet, consectetur adipiscing elit." />
-      <Section title="Section 5" description="Lorem ipsum dolor sit amet, consectetur adipiscing elit." />
+
       {/* Rest of the page content would continue here */}
     </Box>
   );
