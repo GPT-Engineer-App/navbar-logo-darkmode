@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Heading, Text } from "@chakra-ui/react";
+import { Box, Heading, Text, Divider } from "@chakra-ui/react";
 
 const Section = ({ title, description }) => {
   return (
@@ -8,6 +8,7 @@ const Section = ({ title, description }) => {
         {title}
       </Heading>
       <Text fontSize="md">{description}</Text>
+      <Divider my={4} />
     </Box>
   );
 };
