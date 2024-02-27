@@ -1,9 +1,14 @@
 import React from "react";
-import { Box, Flex, Image, Spacer, Switch, useColorMode, useColorModeValue } from "@chakra-ui/react";
-import { FaBars, FaSearch, FaMoon, FaSun } from "react-icons/fa";
+import { Box, Flex, IconButton, useColorMode } from "@chakra-ui/react";
+import { FaMoon, FaSun } from "react-icons/fa";
 
 const Navbar = () => {
-  return <Flex as="nav" align="center" justify="space-between" padding="4" color="white" shadow="md"></Flex>;
+  const { colorMode, toggleColorMode } = useColorMode();
+  return (
+    <Flex as="nav" align="center" justify="space-between" padding="4" color="white" shadow="md">
+      <IconButton aria-label="Toggle dark mode" icon={colorMode === "light" ? <FaMoon /> : <FaSun />} onClick={toggleColorMode} />
+    </Flex>
+  );
 };
 
 const Index = () => {
