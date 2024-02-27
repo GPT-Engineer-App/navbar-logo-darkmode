@@ -8,12 +8,10 @@ const Navbar = () => {
   return (
     <Flex as="nav" align="center" justify="space-between" padding={4} bg="gray.100" color="black" shadow="md">
       {/* Right section */}
-      <Flex align="center">
-        {/* Dark Mode Switch */}
-        <Switch id="dark-mode-switch" colorScheme="purple" isChecked={colorMode === "dark"} onChange={toggleColorMode}>
-          {colorMode === "dark" ? <FaSun /> : <FaMoon />}
-        </Switch>
-      </Flex>
+      {/* Dark Mode Switch */}
+      <Switch id="dark-mode-switch" colorScheme="purple" isChecked={colorMode === "dark"} onChange={toggleColorMode} display="flex" alignItems="center">
+        {colorMode === "dark" ? <FaSun marginRight="2" /> : <FaMoon marginRight="2" />}
+      </Switch>
     </Flex>
   );
 };
