@@ -1,7 +1,7 @@
 // Remove duplicate Navbar and Index components and add missing imports for Navbar
 
-import React, { useState, useEffect } from "react";
-import { Box, Flex, IconButton, useColorMode, useDisclosure } from "@chakra-ui/react";
+import React, { useState, useEffect, useRef } from "react";
+import { Box, Flex, IconButton, useColorMode, useDisclosure, useColorModeValue } from "@chakra-ui/react";
 
 import { FaBars, FaMoon, FaSun, FaUser } from "react-icons/fa";
 import Section from "./Section";
@@ -30,12 +30,39 @@ const sections = [
 ];
 
 const Index = () => {
+  const [activeSection, setActiveSection] = useState(null);
+  const sectionRefs = useRef(
+    sections.reduce((acc, value) => {
+      acc[value.id] = React.createRef();
+      return acc;
+    }, {}),
+  );
+  const activeLinkColor = useColorModeValue("blue.500", "blue.200");
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentSection = sections.reduce((acc, section) => {
+        const ref = sectionRefs.current[section.id];
+        const offset = ref.current.offsetTop - window.scrollY;
+        return offset >= 0 && offset < window.innerHeight ? section : acc;
+      }, sections[0]);
+
+      setActiveSection(currentSection);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [sections]);
+
   return (
-    <Box>
-      <Navbar />
+    <Box position="relative">
+      <Navbar sections={sections} activeSection={activeSection} activeLinkColor={activeLinkColor} />
       <Box pt="100px" p={5}>
         {sections.map((section) => (
-          <Section key={section.id} id={section.id} title={section.title} description={`Description for ${section.title}`} showDivider={section.title !== "Section 5"} />
+          <Section ref={sectionRefs.current[section.id]} key={section.id} id={section.id} title={section.title} description={`Description for ${section.title}`} showDivider={section.title !== "Section 5"} />
         ))}
       </Box>
     </Box>
