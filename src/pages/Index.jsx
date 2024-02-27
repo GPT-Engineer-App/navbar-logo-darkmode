@@ -7,7 +7,7 @@ const Navbar = () => {
   return (
     <Flex as="nav" align="center" justify="space-between" padding="4" color="white" shadow="md">
       <Flex ml="auto" color={colorMode === "light" ? "black" : "white"}>
-        <Box as="span" display="flex" alignItems="center" color="inherit">
+        <Box as="span" display="flex" alignItems="center" color="inherit" mr="2">
           <FaUser />
         </Box>
         <IconButton aria-label="Toggle dark mode" variant="ghost" icon={colorMode === "light" ? <FaMoon /> : <FaSun />} onClick={toggleColorMode} />
