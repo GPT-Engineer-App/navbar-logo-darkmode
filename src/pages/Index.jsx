@@ -10,7 +10,7 @@ const Navbar = () => {
         <Box as="span" display="flex" alignItems="center" color="inherit">
           <FaUser />
         </Box>
-        <IconButton aria-label="Toggle dark mode" icon={colorMode === "light" ? <FaMoon /> : <FaSun />} onClick={toggleColorMode} />
+        <IconButton aria-label="Toggle dark mode" variant="ghost" icon={colorMode === "light" ? <FaMoon /> : <FaSun />} onClick={toggleColorMode} />
       </Flex>
     </Flex>
   );
