@@ -22,9 +22,13 @@ const Index = () => {
   return (
     <Box>
       <Navbar />
-      <Box pt="24" p={5}></Box>
-
-      {/* Rest of the page content would continue here */}
+      <Box pt="24" p={5}>
+        <Section title="Section 1" description="Description for Section 1" />
+        <Section title="Section 2" description="Description for Section 2" />
+        <Section title="Section 3" description="Description for Section 3" />
+        <Section title="Section 4" description="Description for Section 4" />
+        <Section title="Section 5" description="Description for Section 5" />
+      </Box>
     </Box>
   );
 };
