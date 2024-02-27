@@ -27,7 +27,7 @@ const ScrollspyNav = ({ sections }) => {
   }, [sections]);
 
   return (
-    <Stack as="nav" spacing={4} position="fixed" top="100px" left={0} zIndex={1}>
+    <Stack as="nav" spacing={4} position="fixed" top="100px" right={0} zIndex={1}>
       {sections.map((section) => (
         <Link key={section.id} href={`#${section.id}`} color={activeSection === section.id ? "blue.500" : "gray.500"} _hover={{ color: "blue.300" }}>
           {section.title}
