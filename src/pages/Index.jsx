@@ -1,15 +1,18 @@
 // Remove duplicate Navbar and Index components and add missing imports for Navbar
 
 import React from "react";
-import { Box, Flex, IconButton, useColorMode, Heading, Text } from "@chakra-ui/react";
+import { Box, Flex, IconButton, useColorMode, useDisclosure } from "@chakra-ui/react";
+import Sidebar from "../components/Sidebar";
 import { FaBars, FaMoon, FaSun, FaUser } from "react-icons/fa";
 import Section from "./Section";
 
 const Navbar = () => {
   const { colorMode, toggleColorMode } = useColorMode();
+  const { isOpen, onOpen, onClose } = useDisclosure();
   return (
     <Flex as="nav" align="center" justify="space-between" padding="4" color="white" shadow="md" width="full" zIndex={10}>
-      <IconButton aria-label="Menu" variant="ghost" icon={<FaBars />} mr="auto" />
+      <IconButton aria-label="Menu" variant="ghost" icon={<FaBars />} mr="auto" onClick={onOpen} />
+      <Sidebar isOpen={isOpen} onClose={onClose} />
       <Flex ml="auto" color={colorMode === "light" ? "black" : "white"}>
         <IconButton aria-label="Profile" variant="ghost" icon={<FaUser />} mr="2" />
         <IconButton aria-label="Toggle dark mode" variant="ghost" icon={colorMode === "light" ? <FaMoon /> : <FaSun />} onClick={toggleColorMode} />
