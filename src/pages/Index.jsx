@@ -8,7 +8,7 @@ const Navbar = () => {
   return (
     <Flex as="nav" align="center" justify="space-between" padding="4" color="white" shadow="md">
       <Box>
-        <FaBars marginRight="4" />
+        <FaBars />
       </Box>
       {/* Dark Mode Switch is moved next to the mode icon */}
       {/* Dark Mode Switch */}
